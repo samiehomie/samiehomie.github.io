@@ -1,7 +1,7 @@
 ---
-title: Enable Google Page Views
+title: Debugging
 author: SAM
-date: 2021-01-03 18:32:00 -0500
+date: 2023-01-03 18:32:00 -0500
 categories: [Blogging, VS Code]
 tags: [google analytics, pageviews]
 imgPath: /assets/img/
