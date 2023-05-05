@@ -2,7 +2,7 @@
 title: Debugging
 author: SAM
 date: 2023-01-03 18:32:00 -0500
-categories: [Blogging, VS Code]
+categories: [Blogging, Tutorial]
 tags: [google analytics, pageviews]
 imgPath: /assets/img/
 ---
