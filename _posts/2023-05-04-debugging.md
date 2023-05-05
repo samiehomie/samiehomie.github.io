@@ -4,7 +4,6 @@ author: SAM
 date: 2023-01-03 18:32:00 -0500
 categories: [Blogging, Tutorial]
 tags: [google analytics, pageviews]
-imgPath: /assets/img
 ---
 
 - [Debugging](#debugging)
@@ -31,7 +30,7 @@ imgPath: /assets/img
 
 VS Code의 주요 기능 중 하나는 뛰어난 디버깅 지원이다. VS Code의 내장 디버거는 편집, 컴파일 및 디버그 루프의 능률을 높인다.
 
-![debugging_hero]({{ page.imgPath }}/debugging/debugging_hero.png)
+![debugging_hero]({{ page.imgPath }}debugging_hero.png)
 
 ## Debugger extensions
 
@@ -41,7 +40,7 @@ VS Code는 Node.js 런타임에 대한 디버깅 지원을 내장하고 있으�
 
 다음은 디버깅 지원을 포함하는 대표적인 확장기능들 이다.
 
-![debugger extensions]({{ page.imgPath }}/debugging/ext.png)
+![debugger-extensions]({{ page.imgPath }}ext.png)
 
 ## Start debugging
 
@@ -51,19 +50,19 @@ VS Code는 Node.js 런타임에 대한 디버깅 지원을 내장하고 있으�
 
 **Run and Debug** 뷰를 표시하려면 VS Code 측면의 작업 표시줄(Activity Bar)에서 **Run and Debug** 아이콘을 선택한다. 바로 가기 키 `Ctrl+Shift+D`를 사용할 수도 있다.
 
-![run]({{ page.imgPath }}/debugging/run.png)
+![run]({{ page.imgPath }}run.png)
 
 **Run and Debug** 뷰에는 실행 및 디버깅과 관련된 모든 정보가 표시되며 디버깅 명령 및 설정이 있는 상단 표시줄이 있다.
 
 **Run and Debug**이 아직 설정되지 않은 경우(`launch.json`이 생성되지 않은 경우) VS Code는 아래와 같은 Run start 뷰를 표시한다.
 
-![debug-start]({{ page.imgPath }}/debugging/debug-start.png)
+![debug-start]({{ page.imgPath }}debug-start.png)
 
 ## Run menu
 
 최상위 메뉴 **Run**에는 가장 일반적인 실행 및 디버그 명령이 있다.
 
-![debug-menu]({{ page.imgPath }}/debugging/debug-menu.png)
+![debug-menu]({{ page.imgPath }}debug-menu.png)
 
 ## Launch configurations
 
@@ -73,11 +72,11 @@ VS Code에서 간단한 앱을 실행하거나 디버깅하려면 Debug start �
 
 `launch.json`파일을 만들려면 Run start 뷰에서 **create a launch.json file** 링크를 클릭한다.
 
-![launch-configuration]({{ page.imgPath }}/debugging/launch-configuration.png)
+![launch-configuration]({{ page.imgPath }}launch-configuration.png)
 
 VS Code는 디버그 환경을 자동으로 감지하려고 하지만, 이 작업이 실패할 경우 수동으로 선택해야 한다.
 
-![debug-environments]({{ page.imgPath }}/debugging/debug-environments.png)
+![debug-environments]({{ page.imgPath }}debug-environments.png)
 
 다음은 Node.js 디버깅을 위해 생성된 launch 설정이다.
 
@@ -96,7 +95,7 @@ VS Code는 디버그 환경을 자동으로 감지하려고 하지만, 이 작�
 
 파일 탐색기(Ctrl+Shift+E)를 확인해보면, VS Code가 `.vscode` 폴더를 만들고 `launch.json` 파일을 추가한 것을 볼 수 있다.
 
-![launch-json-in-explorer]({{ page.imgPath }}/debugging/launch-json-in-explorer.png)
+![launch-json-in-explorer]({{ page.imgPath }}launch-json-in-explorer.png)
 
 > **Note** : VS Code에서 폴더를 열지 않은 경우에도 간단한 애플리케이션을 디버깅할 수 있지만 launch 설정을 관리하고 고급 디버깅을 설정할 수 없다. 열려 있는 폴더가 없는 경우 VS Code 상태 표시줄은 보라색이다.
 
@@ -104,7 +103,7 @@ launch 설정에서 사용할 수 있는 속성은 디버거마다 다르다. In
 
 한 디버거에서 사용할 수 있는 속성이 다른 디버거에서도 당연히 작동할 것이라 가정하지 말자. launch 설정에 녹색 꼬불꼬불한 선이 표시되면 호버 도움말로 문제가 무엇인지 확인하고 디버그 세션을 시작하기 전에 수정하자.
 
-![launch-json-intellisense]({{ page.imgPath }}/debugging/launch-json-intellisense.png)
+![launch-json-intellisense]({{ page.imgPath }}launch-json-intellisense.png)
 
 자동으로 생성된 모든 값을 검토하고 해당 값이 프로젝트 및 디버깅 환경에 적합한지 확인하자.
 
@@ -124,7 +123,7 @@ VS Code에는 두 가지 핵심 디버깅 모드인 Launch와 Attach가 있으�
 - 배열 시작 부분에서 **Add Configuration**버튼을 눌러 스니펫 IntelliSense를 호출
 - Run 메뉴에서 **Add Configuration** 옵션 선택
 
-![add-config]({{ page.imgPath }}/debugging/add-config.gif)
+![add-config]({{ page.imgPath }}add-config.gif)
 
 VS Code는 동시에 여러 설정을 시작할 수 있는 복합 launch 설정도 지원한다.
 
@@ -134,17 +133,17 @@ VS Code는 동시에 여러 설정을 시작할 수 있는 복합 launch 설정�
 
 디버깅 세션이 시작되자마자 **DEBUG CONSOLE** 패널이 표시되고 디버깅 출력이 표시되며 상태 표시줄의 색상이 변경된다(기본 색상 테마의 경우 주황색).
 
-![debug-session]({{ page.imgPath }}/debugging/debug-session.png)
+![debug-session]({{ page.imgPath }}debug-session.png)
 
 또한 상태 표시줄에 **debug status**가 나타나 활성화된 디버그 설정을 표시한다. debug status를 선택하면 **Run and Debug**뷰를 열지 않고도 launch 설정을 변경하고 디버깅을 시작할 수 있다.
 
-![debug-status.png]({{ page.imgPath }}/debugging/debug-status.png)
+![debug-status.png]({{ page.imgPath }}debug-status.png)
 
 ## Debug actions
 
 디버그 세션이 시작되면 에디터 상단에 **Debug toolbar**가 나타난다.
 
-![toolbar]({{ page.imgPath }}/debugging/toolbar.png)
+![toolbar]({{ page.imgPath }}toolbar.png)
 
 | Action                       | Explanation                                                                                                                                      |
 | :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,11 +174,11 @@ breakpoint는 에디터 여백을 클릭하거나 현재 라인에서 `F9`를 �
 
 **Reapply All Breakpoints** 명령은 모든 breakpoint을 원래 위치로 다시 설정합니다. 이것은 디버그 환경이 느려 아직 실행되지 않은 소스 코드의 breakpoint를 잘못 배치하는 경우에 유용하다.
 
-![breakpoints.png]({{ page.imgPath }}/debugging/breakpoints.png)
+![breakpoints.png]({{ page.imgPath }}breakpoints.png)
 
 `debug.showBreakpointsInOverviewRuler`설정을 활성화하여 에디터의 우측 개요 눈금자에 breakpoint를 표시할 수 있다.
 
-![bpts-in-overview.png]({{ page.imgPath }}/debugging/bpts-in-overview.png)
+![bpts-in-overview.png]({{ page.imgPath }}bpts-in-overview.png)
 
 ## Logpoints
 
@@ -187,7 +186,7 @@ breakpoint는 에디터 여백을 클릭하거나 현재 라인에서 `F9`를 �
 
 로그포인트는 다이아몬드 아이콘으로 표시된다. 로그 메시지는 플레인 텍스트이지만 컬리 브레이스(`{}`)에 표현식을 포함할 수 있다.
 
-![log-points.gif]({{ page.imgPath }}/debugging/log-points.gif)
+![log-points.gif]({{ page.imgPath }}log-points.gif)
 
 일반 breakpoint와 마찬가지로 로그포인트를 활성화하거나 비활성화할 수 있으며 `condition and/or hit count`를 통해 제어할 수도 있다.
 
@@ -197,23 +196,23 @@ breakpoint는 에디터 여백을 클릭하거나 현재 라인에서 `F9`를 �
 
 변수는 **Run and Debug** 뷰의 **VARIABLES** 섹션이나 에디터에서 해당 소스 위에 마우스를 올려 검사할 수 있습니다. 변수의 값과 표현식 평가는 **CALL STACK** 섹션에서 선택한 스택 프레임에 기준하여 출력된다.
 
-![variables.png](/assets/img/debugging/variables.png)
+![variables.png]({{ page.imgPath }}variables.png)
 
 해당 변수의 컨텍스트 메뉴의 **Set Value** 액션으로 변수 값을 수정할 수 있다. 또한 **Copy Value** 액션으로 변수의 값을 복사하거나 **Copy as Expression** 액션을 사용하여 해당 변수에 액세스하는 식을 복사할 수 있다(변수의 경우 식별자가 복사됨).
 
 변수와 식은 **Run and Debug** 뷰의 **WATCH** 섹션에서 평가하고 확인할 수 있다.
 
-![watch.png](/assets/img/debugging/watch.png)
+![watch.png]({{ page.imgPath }}watch.png)
 
 **VARIABLES** 섹션에 포커스를 두고 입력하면 변수 이름과 값을 필터링할 수 있다.
 
-![filtering-variables.png](/assets/img/debugging/filtering-variables.png)
+![filtering-variables.png]({{ page.imgPath }}filtering-variables.png)
 
 ## Launch.json attributes
 
 다양한 디버거 및 디버깅 시나리오를 지원하기 위해 많은 `launch.json` 속성이 있다. 위에서 설명한 것처럼 `type` 속성에 값을 지정한 후 IntelliSense(`Ctrl+Space`)를 사용하여 사용 가능한 속성 목록을 볼 수 있다.
 
-![launch-json-suggestions.png](/assets/img/debugging/launch-json-suggestions.png)
+![launch-json-suggestions.png]({{ page.imgPath }}launch-json-suggestions.png)
 
 다음 속성은 모든 launch 설정에 들어가는 필수 속성이다.
 
@@ -323,11 +322,11 @@ User settings 내에 `"launch"` 객체를 추가할 수 있다. 그러면 이 `"
 
 breakpoint 조건 추가는 breakpoint를 추가 할 때 추가 하거나(**Add Conditional Breakpoint** 액션) 또는 이미 존재하는 breakpoint를 수정하여(**Edit Condition** 액션) 추가할 수 있다. 어느 방식이든 표현식(Expression), 히트 카운트(Hit count)를 선택하고 입력하는 인라인 텍스트 박스가 열리고 그 곳에 원하는 조건을 입력하면 된다.
 
-![hitCount.gif]({{ page.imgPath }}/debugging/hitCount.gif)
+![hitCount.gif]({{ page.imgPath }}hitCount.gif)
 
 **function**과 **excption**의 breakpoint에 대해서도 히트 카운트 및 표현식 조건 수정이 지원된다. 컨택스트 메뉴 또는 새로운 인라인 **Edit Condition** 액션을 통해 조건을 수정할 수 있다.
 
-![breakpoints.gif]({{ page.imgPath }}/debugging/breakpoints.gif)
+![breakpoints.gif]({{ page.imgPath }}breakpoints.gif)
 
 디비거가 조건부 breakpoint를 지원하지 않으면 **Add Conditional Breakpoint**와 **Edit Condition** 액션은 무시된다.
 
