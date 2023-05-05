@@ -4,7 +4,7 @@ author: SAM
 date: 2023-01-03 18:32:00 -0500
 categories: [Blogging, Tutorial]
 tags: [google analytics, pageviews]
-imgPath: /assets/img/
+imgPath: /assets/img
 ---
 
 - [Debugging](#debugging)
@@ -31,7 +31,7 @@ imgPath: /assets/img/
 
 VS Code의 주요 기능 중 하나는 뛰어난 디버깅 지원이다. VS Code의 내장 디버거는 편집, 컴파일 및 디버그 루프의 능률을 높인다.
 
-![debugging_hero](/debugging/debugging_hero.png)
+![debugging_hero]({{ page.imgPath }}/debugging/debugging_hero.png)
 
 ## Debugger extensions
 
