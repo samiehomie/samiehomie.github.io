@@ -356,3 +356,113 @@ breakpoint 조건 추가는 breakpoint를 추가 할 때 추가 하거나(**Add 
   "args": ["<", "in.txt"]
 }
 ```
+
+이 접근법은 "<" 구문이 디버거 확장앱을 통해 전달되어야 하며 통합 터미널에서 수정되지 않은 상태로 머물러야 한다.
+
+## Multi-target debugging
+
+둘 이상의 프로세스(예: 클라이언트 및 서버)가 포함된 복잡한 시나리오의 경우 VS Code는 다중 대상 디버깅을 지원한다.
+
+다중 대상 디버깅을 사용하는 것은 간단하다. 첫 번째 디버그 세션을 시작한 후 다른 세션을 시작하면 된다. 두 번째 세션이 시작되고 실행되는 즉시 VS Code UI가 다중 대상 모드로 전환된다.
+
+- 이제 각 개별 세션이 **CALL STACK** 뷰에서 최상위 요소로 표시된다.
+  ![debug-callstack.png](/assets/img//debugging/debug-callstack.png)
+- 디버그 툴바는 현재 활성 세션을 표시하며, 다른 모든 세션은 드롭다운 메뉴에서 선택할 수 있다.
+  ![debug-actions-widget.png](/assets/img/debugging/debug-actions-widget.png)
+- 디버그 액션(예: 디버그 툴바의 모든 액션)은 활성 세션에서 수행된다. 활성 세션은 디버그 툴바의 드롭다운 메뉴를 사용하거나 **CALL STACK** 보기에서 다른 요소를 선택하여 변경할 수 있다.
+
+### Compound launch configurations
+
+여러 디버그 세션을 시작하는 다른 방법은 복합 launch 설정을 사용하는 것이다. 복합 launch 설정은 병렬로 실행되어야 하는 둘 이상의 launch 설정의 이름을 나열한다. 선택적으로 `preLaunchTask`을 사용해 개별 디버그 세션이 시작되기 전에 실행되는 사전 실행 태스크를 지정할 수 있다. `stopAll`에 부울 플래그를 할당해 하나의 세션을 수동으로 종료할 경우 모든 복합 세션을 중지할것인지 정할 수 있다.
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Server",
+      "program": "${workspaceFolder}/server.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Client",
+      "program": "${workspaceFolder}/client.js"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Server/Client",
+      "configurations": ["Server", "Client"],
+      "preLaunchTask": "${defaultBuildTask}",
+      "stopAll": true
+    }
+  ]
+}
+```
+
+복합 launch 설정은 launch 설정 드롭다운 메뉴에 표시된다.
+
+## Remote debugging
+
+VS Code 자체는 원격 디버깅을 지원하지 않는다. 이는 사용 중인 디버그 확장앱의 기능이며 지원 및 자세한 내용은 마켓플레이스의 확장앱 페이지를 참조하십시오.
+
+그러나 한 가지 예외가 있다. VS Code에 포함된 Node.js 디버거는 원격 디버깅을 지원한다. 설정 방법에 대한 자세한 내용은 [Node.js 디버깅 항목](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_remote-debugging)을 참조하십시오.
+
+## Automatically open a URI when debugging a server program
+
+웹 프로그램 개발시 보통 서버 코드 디버깅을 위해 웹 브라우저에서 특정 URL을 열어야 한다. VS Code에는 이 작업을 자동화하는 "**serverReadyAction**" 기능이 내장되어 있다.
+
+다음은 간단한 Node.js Express 애플리케이션의 예이다.
+
+```javascript
+var express = require("express");
+var app = express();
+
+app.get("/", function (req, res) {
+  res.send("Hello World!");
+});
+
+app.listen(3000, function () {
+  console.log("Example app listening on port 3000!");
+});
+```
+
+이 애플리케이션은 먼저 "/" URL에 대한 "Hello World" 핸들러를 설치한 다음 포트 3000에서 HTTP 연결을 듣기(listen) 시작한다. 이 포트는 디버그 콘솔에 출력되고 일반적으로 개발자가 브라우저에 `http://localhost:3000`을 입력한다.
+
+구조화된 속성 `serverReadyAction`을 launch 설정에 추가하고 수행할 액션을 선택함으로써 이 작업을 자동화할 수 있다.
+
+```json
+{
+  "type": "node",
+  "request": "launch",
+  "name": "Launch Program",
+  "program": "${workspaceFolder}/app.js",
+
+  "serverReadyAction": {
+    "pattern": "listening on port ([0-9]+)",
+    "uriFormat": "http://localhost:%s",
+    "action": "openExternally"
+  }
+}
+```
+
+여기서 `pattern` 속성엔 어떤 포트를 사용하는지 알리는 프로그램의 출력 문자열과 일치하는 정규식을 할당한다. 이 포트 번호 패턴은 괄호 안에 삽입되어 정규식 캡처 그룹으로 사용할 수 있다. 이 예에서는 포트 번호만 추출하지만 전체 URI를 추출할 수도 있다.
+
+`uriFormat` 속성에는 포트 번호가 URI로 변환되는 방법을 설명해야 한다. 첫 번째 `%s`는 `pattern`의 첫 번째 캡처 그룹으로 대체된다.
+
+그런 다음 결과 URI는 VS Code 외부("externally")에서 해당 URI의 구조에 기본 프로그램으로 설정된 프로그램으로 열린다.
+
+### Trigger Debugging via Edge or Chrome
+
+또는 `debugWithEdge` 또는 `debugWithChrome`을 사용하여 동작을 설정할 수 있다. 이 방식에선 Chrome 또는 Edge 디버그 세션에 전달되는 `webRoot` 속성을 추가할 수 있다.
+
+대부분의 속성은 선택 사항이며 작업을 단순화하기 위해 다음과 같은 폴백 값(fallback, 다양한 경우를 포용하는 값)을 사용한다.
+
+- **pattern**: `"listening on.* (https?://\\S+|[0-9]+)"` 일반적으로 사용되는 메시지 "listening on port 3000" 또는 "Now listening on: https://localhost:5001"에 매칭된다.
+- **uniFormat**: `"http://localhost:%s"`
+- **webRoot**: `"${workspaceFolder}"`
+
+### Triggering an Arbitrary Launch Config
