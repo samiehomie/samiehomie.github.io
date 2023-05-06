@@ -327,3 +327,9 @@ breakpoint 조건 추가는 breakpoint를 추가 할 때 추가 하거나(**Add 
 디버거가 데이터 breakpoint를 지원하는 경우 **VARIABLES**뷰 컨텍스트 메뉴에서 데이터 breakpoint를 설정할 수 있다. **Break on Value Change/Read/Access** 명령은 지정한 변수의 값이 변경/읽기/액세스될 때 실행되는 데이터 breakpoint를 추가한다. 데이터 breakpoint는 **BREAKPOINTS** 섹션에서 빨간색 육각형으로 표시된다.
 
 ## Debug Console REPL
+
+**Debug Console**의 REPL(Read-Eval-Print Loop)기능으로 식을 평가할 수 있다. 디버그 콘솔을 열려면 디버그 창의 맨 위에 있는 **Debug Console** 액션을 사용하거나 **View: Debug Console** 명령(`Ctrl+Shift+Y`)을 사용한다. 식은 `Enter` 키를 누른 후 평가되며 디버그 콘솔 REPL에 입력 시 제안 사항이 표시된다. 여러 줄을 입력해야 하는 경우 `Shift+Enter`를 사용해 개행하여 입력하고 `Enter`키를 눌러 모든 줄을 평가한다. 디버그 콘솔 입력은 활성 에디터의 모드를 사용하므로 디버그 콘솔 입력은 구문 색상 표시, 들여쓰기, 따옴표 자동닫기 등의 언어 기능을 지원한다.
+
+![debugconsole.png](/assets/img/debugging/debugconsole.png)
+
+**Note**: Debug Console REPL은 디버깅 세션이 실행중일 떄 사용할 수 있다.
