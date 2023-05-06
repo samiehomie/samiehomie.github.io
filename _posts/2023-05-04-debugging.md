@@ -366,7 +366,7 @@ breakpoint 조건 추가는 breakpoint를 추가 할 때 추가 하거나(**Add 
 다중 대상 디버깅을 사용하는 것은 간단하다. 첫 번째 디버그 세션을 시작한 후 다른 세션을 시작하면 된다. 두 번째 세션이 시작되고 실행되는 즉시 VS Code UI가 다중 대상 모드로 전환된다.
 
 - 이제 각 개별 세션이 **CALL STACK** 뷰에서 최상위 요소로 표시된다.
-  ![debug-callstack.png](/assets/img//debugging/debug-callstack.png)
+  ![debug-callstack.png](/assets/img/debugging/debug-callstack.png)
 - 디버그 툴바는 현재 활성 세션을 표시하며, 다른 모든 세션은 드롭다운 메뉴에서 선택할 수 있다.
   ![debug-actions-widget.png](/assets/img/debugging/debug-actions-widget.png)
 - 디버그 액션(예: 디버그 툴바의 모든 액션)은 활성 세션에서 수행된다. 활성 세션은 디버그 툴바의 드롭다운 메뉴를 사용하거나 **CALL STACK** 보기에서 다른 요소를 선택하여 변경할 수 있다.
