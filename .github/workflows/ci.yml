@@ -37,11 +37,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
+      - name: Init Site
+        run: bash tools/init
+
       - name: Build Assets
         run: npm i && npm run build
 
       - name: Test Site
         run: bash tools/test
-
-      - name: Init Site
-        run: bash tools/init
