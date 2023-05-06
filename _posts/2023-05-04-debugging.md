@@ -2,8 +2,8 @@
 title: Debugging
 author: SAM
 date: 2023-01-03 18:32:00 -0500
-categories: [Blogging, Tutorial]
-tags: [google analytics, pageviews]
+categories: [VS Code, USER GUIDE]
+tags: [VS Code, debugging]
 ---
 
 VS Code의 주요 기능 중 하나는 뛰어난 디버깅 지원이다. VS Code의 내장 디버거는 편집, 컴파일 및 디버그 루프의 능률을 높인다.
@@ -466,3 +466,9 @@ app.listen(3000, function () {
 - **webRoot**: `"${workspaceFolder}"`
 
 ### Triggering an Arbitrary Launch Config
+
+경우에 따라 브라우저 디버그 세션에 대한 추가 옵션을 설정하거나 다른 디버거를 전적으로 사용해야 할 수 있다. `pattern`이 일치할 때 시작할 launch 설정의 이름으로 설정된 `name` 속성을 받은 `startDebugging`을 `action`으로 설정하여 이 작업을 수행할 수 있다.
+
+이 명명된 launch 설정은 반드시 `serverReadyAction`옵션이 지정된 launch 파일과 같은 폴더 또는 파일에 있어야 한다.
+
+![server-ready.gif](/assets/img/debugging/server-ready.gif)
