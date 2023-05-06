@@ -4,7 +4,7 @@ author: cotes
 date: 2019-08-09 20:55:00 +0800
 categories: [Blogging, Tutorial]
 tags: [getting started]
-pin: true
+pin: false
 ---
 
 ## Prerequisites
@@ -35,7 +35,7 @@ $ bash tools/init
 ```
 
 > If you don't want to deploy your site on GitHub Pages, append option `--no-gh` at the end of the above command.
-{: .prompt-info }
+> {: .prompt-info }
 
 The above command will:
 

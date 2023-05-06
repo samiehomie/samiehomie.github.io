@@ -1,7 +1,7 @@
 ---
 title: Debugging
-author: SAM
-date: 2023-01-03 18:32:00 -0500
+author: sam
+date: 2022-12-10 18:32:00 -0500
 categories: [VS Code, USER GUIDE]
 tags: [VS Code, debugging]
 ---
