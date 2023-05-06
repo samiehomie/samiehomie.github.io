@@ -111,7 +111,7 @@ assets:
     enabled: true
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
-    env: production
+    env: development
 
 pwa:
   enabled: true # the option for PWA feature
