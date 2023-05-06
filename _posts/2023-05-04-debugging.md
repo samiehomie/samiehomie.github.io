@@ -333,3 +333,26 @@ breakpoint 조건 추가는 breakpoint를 추가 할 때 추가 하거나(**Add 
 ![debugconsole.png](/assets/img/debugging/debugconsole.png)
 
 **Note**: Debug Console REPL은 디버깅 세션이 실행중일 떄 사용할 수 있다.
+
+## Redirect input/output to/from the debug target
+
+입력/출력 리디렉션은 디버거/런타임에 따라 다르므로 VS Code에는 모든 디버거에서 작동하는 내장 솔루션이 없다.
+
+따라서 다음 두 가지 방법을 고려해 보자.
+
+1. 터미널 또는 명령 프롬프트에서 수동으로 디버깅할 프로그램(디버그 대상)을 시작하고 필요에 따라 입력/출력을 리디렉션한다. 디버거가 디버그 대상에 연결될 수 있도록 적절한 명령 옵션을 디버그 대상에 전달해야 한다. 디버그 대상에 연결될 "attach" 디버그 설정을 만들고 실행한다.
+
+2. 사용 중인 디버거 확장앱이 VS Code의 통합 터미널(또는 외부 터미널)에서 디버그 대상을 실행할 수 있는 경우 shell 리디렉션 구문(예: "<" 또는 ">")을 인수로 전달할 수 있다.
+
+아래는 `launch.json` 설정 예시다.
+
+```json
+{
+  "name": "launch program that reads a file from stdin",
+  "type": "node",
+  "request": "launch",
+  "program": "program.js",
+  "console": "integratedTerminal",
+  "args": ["<", "in.txt"]
+}
+```
