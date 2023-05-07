@@ -1,5 +1,5 @@
 ---
-title: Debugging
+title: Debugging in VS Code
 author: sam
 date: 2022-12-10 18:32:00 -0500
 categories: [VS Code, USER GUIDE]
