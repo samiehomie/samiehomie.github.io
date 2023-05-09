@@ -116,3 +116,30 @@ Hot exit는 `files.hotExit` 설정을 통해 컨트롤 할 수 있으며 다음 
 ### Advanced search options
 
 ![searchadvanced.png]({{ page.imgp }}searchadvanced.png)
+
+검색 상자 아래의 두 입력 상자에서 검색에 포함하거나 제외할 패턴을 입력할 수 있다. `example`을 입력하면 워크스페이스에서 `example`이라는 이름의 모든 폴더 및 파일과 매치된다. `./example`을 입력하면 워크스페이스 루트에 있는 폴더 `example/`과 매치된다. 여러 패턴을 구분하려면 `,`를 사용한다. 경로는 슬래시를 사용해야 한다. glob 패턴을 사용할 수도 있다.
+
+- `*` 경로 세그먼트(경로 구분자 /로 나눠지는 경로의 부분을 말함)안 0개 이상의 문자와 매칭. 경로 세그먼트'안' 이므로 경로 구분자인 /는 매칭 안됨.
+- `?` 경로 세그먼트안 1개 문자와 매칭
+- `**` 아예 없는 것을 포함하여 모든 경로 세그먼트와 매칭('' 부터 './../../' 등 모두 매칭)
+- `{}` 여러 조건을 그룹화. 예를 들어 `{**/*.html,**/*.txt}`는 모든 HTML과 text 파일에 매칭된다.
+- `[]` 매칭한 문자열의 범위를 지정함. `example.[0-9]`는 `example.0`, `example.1`과 매칭됨.
+- `[!...]` 지정한 문자열 범위에 포함된 것을 제외하고 매칭함. `example.[!0-9]`은 `example.a`, `example.b`와 매칭되고 `example.0`와는 매칭되지 않는다.
+
+VS Code는 기본값으로 일부 폴더를 제외하여 검색 결과의 수를 줄인다(예: `node_modules`). 설정의 `files.exclude` 와 `search.exclude` 속성을 수정하여 이러한 규칙을 변경할 수 있다.
+
+검색 뷰의 glob 패턴은 설정의 `files.exclude` 및 `search.exclude`의 것과는 다르게 작동한다. 설정에선 `**/example`을 사용하여 워크스페이스의 하위 폴더 `folder1/example`에 있는 `example`폴더와 매칭한다. 반면 검색 뷰에선 `**` 접두사가 이미 있는것으로 상정한다.
+
+검색 뷰의 **files to exclude** 박스안 **Use Exclude Settings and Ignore Files** 토근 버튼을 확인하자. 이 토글 버튼은 `.gitignore`파일 그리고 설정의 `files.exclude`, `search.exclude` 에서 제외한 파일들을 제외할지 여부를 결정한다.
+
+![Use-Exclude-Settings-and-Ignore-File]({{ page.imgp }}toggle.png)
+
+> **Tip**: 탐색기에서 폴더를 마우스 오른쪽 클릭하고 **Find in Folder**를 선택하여 해당 폴더 내부만 검색할 수 있다.
+
+### Search and replace
+
+여러 파일을 검색하고 다른 단어로 대체할 수 있다. 검색 위젯을 확장하여 대체(Replace) 텍스트 박스가 보이게 한다.
+
+![global-search-replace.png]({{ page.imgp }}global-search-replace.png)
+
+
