@@ -148,3 +148,4 @@ launch 설정은 VS Code에서 디버깅을 설정하는 전통적인 방식으�
 - **Launch Program**: 디버그 모드에서 Node.js 프로그램을 시작한다.
 - **Launch via npm**: npm의 'debug' 스크립트로 Node.js 프로그램 시작. package.json에 debug 스크립트를 정의했다면 이를 launch 설정에 직접 사용할 수 있다. npm 스크립트에서 사용되는 debug 포트가 스니펫에 지정된 포트와 일치하는지 확인하자.
 - **Attach**: 로컬에서 실행중인 Node.js 프로그램의 debug 포트에 연결한다. 디버그할 Node.js 프로그램이 디버그 모드에서 시작되었고 사용된 디버그 포트가 스니펫에 지정된 포트와 일치하는지 확인하자.
+- **Attach to Remote Program**:
