@@ -166,3 +166,27 @@ VS Code는 기본값으로 일부 폴더를 제외하여 검색 결과의 수를
 
 ## Formatting
 
+에디터에서 내장 코드 포맷팅을 수동으로 사용하는 방법은 두 가지다.
+
+- **Format Document** (`Shift+Alt+F`) - 활성 파일 전체 포맷팅
+- **Format Selection** (`Ctrl+K Ctrl+F`) - 선택 영역 포맷팅
+
+**Command Palette** (`Ctrl+Shift+P`) 또는 에디터의 컨텍스트 메뉴에서 해당 항목을 호출할 수 있다.
+
+VS 코드는 자바스크립트, 타입스크립트, JSON, HTML, CSS를 위한 기본 포맷터를 내장하고 있다. 각 언어는 각각의 포맷팅 옵션(예: `html.format.indentInnerHtml`)이 있고 user 또는 workspace settings에서 원하는 대로 조정할 수 있다. 동일한 언어에 대해 포맷팅을 제공하는 확장앱을 설치한 경우 VS Code의 기본 언어 포맷터를 비활성화 할 수 있다.
+
+```json
+"html.format.enable": false
+```
+
+수동으로 코드 포맷팅을 호출하는 것 외에도 타이핑, 저장 또는 붙여넣기와 같은 사용자 제스처를 기반으로 포맷팅을 트리거할 수 있다. 이러한 설정은 기본적으로 비활성화 되어 있으며 다음 설정을 통해 활성화할 수 있다.
+
+- `editor.formatOnType` - 타이핑 후 해당 라인 포맷팅
+- `editor.formatOnSave` - 저장시 파일 포맷팅
+- `editor.formatOnPaste` - 붙여넣기한 내용 포맷팅
+
+> **Note**: 모든 포맷터가 붙여넣기한 내용 포맷팅을 지원하는 것은 아니다.
+
+## Folding
+
+라인 번호와 라인 시작 사이의 홈통에 있는 폴딩 아이콘을 사용하여 소스 코드 영역을 접을 수 있습니다. 마우스를 홈통 위로 이동하고 클릭하여 영역을 접었다 펼칩니다. Shift 키 사용 + 폴딩 아이콘을 클릭하여 영역과 내부의 모든 영역을 접거나 펼칩니다.
