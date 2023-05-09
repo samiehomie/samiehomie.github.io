@@ -138,8 +138,31 @@ VS Code는 기본값으로 일부 폴더를 제외하여 검색 결과의 수를
 
 ### Search and replace
 
-여러 파일을 검색하고 다른 단어로 대체할 수 있다. 검색 위젯을 확장하여 대체(Replace) 텍스트 박스가 보이게 한다.
+여러 파일을 검색하고 다른 단어로 대체할 수 있다. 검색 위젯을 확장하여 바꾸기(Replace) 텍스트 박스가 보이게 한다.
 
 ![global-search-replace.png]({{ page.imgp }}global-search-replace.png)
 
+바꾸기 텍스트 박스에 텍스트를 입력하면 변경할 내용과 원본의 diff가 표시된다. 바꾸기 텍스트 박스에서 모든 파일을 바꾸거나, 한 파일만을 바꾸거나, 한 파일의 하나의 변경사항만을 바꿀 수 있다.
+
+![search-replace-example.png]({{ page.imgp }}search-replace-example.png)
+
+> **Tip**: 아래,위 방향키를 사용하여 검색어 기록을 탐색하여 이전 검색어를 빠르게 재사용할 수 있다.
+
+### Case changing in regex replace
+
+에디터 또는 전역에서 검색 및 바꾸기를 수행하면서 정규식 매칭 그룹의 대소문자 변경을 할 수 있다. 이는 수식어 `\u\U\l\L`로 이루어지며, 여기서 `\u`와 `\l`은 단일 문자를 대문자/소문자로, `\U`와 `\L`은 매칭 그룹의 나머지(또는 모든) 문자를 대문자/소문자로 변경한다.
+
+![case-change-replace.gif]({{ page.imgp }}case-change-replace.gif)
+
+예를 들어 `\u\u\u$1`은 그룹의 처음 세 문자를 대문자로 만들고 `\l\U$1`은 첫 번째 문자를 소문자로 만들고 나머지 문자는 대문자로 만든다. 캡처 그룹은 대체 문자열에서 `$n`으로 참조된다. 여기서 `n`은 캡처 그룹의 순서다.
+
+## Search Editor
+
+검색 에디터를 사용하면 구문 강조 표시 및 검색어 주변 행이 포함된 전체 크기의 에디터로 워크스페이스 검색 결과를 볼 수 있다.
+
+다음은 일치 단어 전후에 두 줄의 텍스트가 있는 'SearchEditor' 단어를 검색한 예시다.
+
+![search-editor-overview.png]({{ page.imgp }}search-editor-overview.png)
+
+## Formatting
 
