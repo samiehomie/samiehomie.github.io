@@ -188,3 +188,31 @@ VS 코드는 자바스크립트, 타입스크립트, JSON, HTML, CSS를 위한 �
 > **Note**: 모든 포맷터가 붙여넣기한 내용 포맷팅을 지원하는 것은 아니다.
 
 ## Folding
+
+왼쪽 라인 번호 옆에있는 폴딩 아이콘을 사용하여 소스 코드 영역을 접었다 펼수 있다. `Shift + Click`으로 폴딩 아이콘을 눌러 해당 영역과 영역 내부의 모든 영역을 접고 펼칠 수 있다.
+
+![folding.png]({{ page.imgp }}folding.png)
+
+## Indentation
+
+기본적으로 VS Code는 공백을 삽입하고 `Tab` 키당 4개의 공백을 사용한다. 다른 기본값을 설정하려면 `editor.insertSpaces` 와 `editor.tabSize` 설정을 수정한다.
+
+```json
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+```
+
+### Auto-detection
+
+VS Code는 열려 있는 파일을 분석하여 문서에 사용된 들여쓰기를 알아낸다.이 자동 탐지된 들여쓰기는 기본 들여쓰기 설정을 덮어쓴다. 탐지된 들여쓰기 설정은 상태 표시줄의 오른쪽에 표시된다.
+
+![indentation-detection.png]({{ page.imgp }}indentation-detection.png)
+
+상태 표시줄에 있는 이 들여쓰기 표시를 클릭하여 들여쓰기 관련 설정을 변경할 수 있다.
+
+> **Note**: VS Code 자동 감지는 2, 4, 6, 8개의 공백 들여쓰기를 탐지할 수 있다. 파일이 다른 공백(예: 3개 공백)을 사용하는 경우 들여쓰기가 제대로 탐지되지 않을 수 있다. 이런 경우(예: 3개 공백을 들여쓰기 규칙으로 사용하는 경우) 아래와 같이 설정을 수정하여 자동 탐지를 해제하고 명시적으로 탭 사이즈를 지정할 수 있다.
+
+```json
+  "editor.detectIndentation": false,
+  "editor.tabSize": 3,
+```
