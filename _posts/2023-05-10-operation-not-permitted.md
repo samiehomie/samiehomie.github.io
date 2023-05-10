@@ -2,7 +2,7 @@
 title: "EPERM: operation not permitte 오류 해결"
 author: sam
 date: 2023-05-10 18:32:00 -0500
-categories: [Knowhow]
+categories: [Knowhow, 오류 해결]
 tags: [npm, pnpm]
 ---
 
