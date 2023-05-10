@@ -6,8 +6,6 @@ categories: [VS Code, JAVASCRIPT]
 tags: [VS Code, React]
 ---
 
-# Using React in Visual Studio Code
-
 리액트는 페이스북이 개발한 자바스크립트 라이브러리로 유저 인터페이스 구축에 사용된다. VS Code는 리액트 IntelliSense와 뛰어난 코드 네비게이션을 지원한다.
 
 ![welcome-to-react](/assets/img/react/welcome-to-react.png)
