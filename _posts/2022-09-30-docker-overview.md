@@ -1,8 +1,8 @@
 ---
-title: Docker overview
+title: Docker 개괄
 author: sam
 date: 2022-09-30 18:32:00 -0500
-categories: [Docker, Overview]
+categories: [Docker, Get started]
 tags: [docker]
 ---
 
