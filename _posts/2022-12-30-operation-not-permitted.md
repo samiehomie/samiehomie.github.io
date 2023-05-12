@@ -2,7 +2,7 @@
 title: "EPERM: operation not permitted 오류해결"
 author: sam
 date: 2022-12-30 18:32:00 -0500
-categories: [Knowhow, 오류 해결]
+categories: [개발 사전, 오류]
 tags: [npm, pnpm]
 ---
 

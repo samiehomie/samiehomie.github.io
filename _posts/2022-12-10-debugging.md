@@ -58,18 +58,20 @@ VS Code는 디버그 환경을 자동으로 감지하려고 하지만, 이 작�
 
 다음은 Node.js 디버깅을 위해 생성된 launch 설정이다.
 
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
     {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "type": "node",
-                "request": "launch",
-                "name": "Launch Program",
-                "skipFiles": ["<node_internals>/**"],
-                "program": "${workspaceFolder}\\app.js"
-            }
-        ]
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\app.js"
     }
+  ]
+}
+```
 
 파일 탐색기(Ctrl+Shift+E)를 확인해보면, VS Code가 `.vscode` 폴더를 만들고 `launch.json` 파일을 추가한 것을 볼 수 있다.
 
@@ -222,14 +224,16 @@ breakpoint는 에디터 여백을 클릭하거나 현재 라인에서 `F9`를 �
 
 VS Code는 일반적으로 사용되는 경로 및 값을 변수로 만들고 `launch.json`에서 문자열내 변수를 삽입할 수 있는 변수 치환(variable substitution)을 지원한다. 따라서 디버그 설정에서 절대 경로를 사용할 필요가 없다. 예를 들어 `${workspaceFolder}`는 워크플레이스 폴더의 루트 경로를 제공하고, `${file}`은 활성된 에디터에 열려 있는 파일, `${env:Name}`은 환경 변수 'Name'의 값을 제공한다. 미리 정의된 변수의 전체 목록을 보려면 [Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)을 확인하거나, `launch.json` 문자열 속성 내에서 IntelliSense를 호출하면 볼 수 있다.
 
-    {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Program",
-        "program": "${workspaceFolder}/app.js",
-        "cwd": "${workspaceFolder}",
-        "args": ["${env:USERNAME}"]
-    }
+```json
+{
+  "type": "node",
+  "request": "launch",
+  "name": "Launch Program",
+  "program": "${workspaceFolder}/app.js",
+  "cwd": "${workspaceFolder}",
+  "args": ["${env:USERNAME}"]
+}
+```
 
 ## Platform-specific properties
 
@@ -237,21 +241,23 @@ VS Code는 일반적으로 사용되는 경로 및 값을 변수로 만들고 `l
 
 다음은 Windows인 경우만 `"args"` 값을 다르게 전달하는 예시이다.
 
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
     {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "type": "node",
-                "request": "launch",
-                "name": "Launch Program",
-                "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
-                "args": ["myFolder/path/app.js"],
-                "windows": {
-                    "args": ["myFolder\\path\\app.js"]
-                }
-            }
-        ]
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
+      "args": ["myFolder/path/app.js"],
+      "windows": {
+        "args": ["myFolder\\path\\app.js"]
+      }
     }
+  ]
+}
+```
 
 속성에 할당 가능한 값은 `"windows"`, `"linux"`, macOS용 `"osx"`이다. 플랫폼별 범위에 정의된 속성은 전역 범위에 정의된 속성보다 높은 우선권을 갖는다.
 
@@ -259,26 +265,29 @@ VS Code는 일반적으로 사용되는 경로 및 값을 변수로 만들고 `l
 
 아래 예제에서 프로그램 디버깅은 macOS를 제외하고는 항상 엔트리에서 중지(**stops on entry**)된다.
 
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
     {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "type": "node",
-                "request": "launch",
-                "name": "Launch Program",
-                "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
-                "stopOnEntry": true,
-                "osx": {
-                    "stopOnEntry": false
-                }
-            }
-        ]
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
+      "stopOnEntry": true,
+      "osx": {
+        "stopOnEntry": false
+      }
     }
+  ]
+}
+```
 
 ## Global launch configuration
 
 User settings 내에 `"launch"` 객체를 추가할 수 있다. 그러면 이 `"launch"` 설정이 각 작업영역 전체에 공유된다.
 
+```json
     "launch": {
         "version": "0.2.0",
         "configurations": [{
@@ -288,6 +297,7 @@ User settings 내에 `"launch"` 객체를 추가할 수 있다. 그러면 이 `"
             "program": "${file}"
         }]
     }
+```
 
 ## Advanced breakpoint topics
 
