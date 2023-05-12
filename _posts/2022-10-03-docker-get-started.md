@@ -57,3 +57,36 @@ tags: [docker]
    `docker build` 명령 끝에 있는 `.`는 Docker에게 현재 디렉터리에서 `Dockerfile`을 찾아야 함을 알려준다.
 
 ## 애플리케이션 컨테이너 시작하기
+
+이제 이미지가 생겼으니 컨테이너에서 애플리케이션을 실행할 수 있다. `docker run` 명령을 사용한다.
+
+1. `docker run` 명령으로 컨테이를 시작하고 생성한 이미지 이름을 지정한다.
+
+   ```bash
+   docker run -dp 3000:3000 getting-started
+   ```
+
+   `-d` 플래그를 사용하여 새 컨테이너를 분리(detached) 모드로 (백그라운드에서) 실행한다. `-p` 플래그를 사용하여 호스트의 포트 3000과 컨테이너의 포트 3000 간의 매핑을 생성할 수도 있다. 포트 매핑이 없으면 애플리케이션에 액세스할 수 없다.
+
+2. 몇 초후에 브라우저에서 http://localhost:3000를 열어보면 애플리케이션을 확인할 수 있다.
+   ![todo-list-empty.png](/assets/img/docker/todo-list-empty.png)
+3. 앱에서 아이템을 추가해보며 제대로 작동하는지 확인해보자. 아이템을 완료로 표시하고 제거할 수 있다. 프런트 엔드가 백엔드에 아이템을 성공적으로 저장하고 있다.
+
+컨테이너를 간단히 살펴보면 `getting-starte` 이미지를 사용하는 하나 이상의 컨테이너가 포트 3000에서 실행되고 있는 것을 볼 수 있다. 컨테이너를 보려면 CLI 또는 Docker Desktop의 그래픽 인터페이스를 사용할 수 있다.
+
+`docker ps` 명령을 터미널에서 사용해 컨테이너를 나열할 수 있다.
+
+```bash
+docker ps
+```
+
+다음과 비슷한 출력값을 확인할 수 있다.
+
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+df784548666d        getting-started     "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        0.0.0.0:3000->3000/tcp   priceless_mcclintock
+```
+
+또는 Docker 데스크톱에서 **Containers** 탭을 선택해 컨테이터 목록을 확인할 수도 있다.
+
+![dashboard-two-containers.png](/assets/img/docker/dashboard-two-containers.png)
