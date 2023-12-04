@@ -25,7 +25,7 @@ VS Code 하단 좌측에는 저장소의 상태를 나타내는 아이콘이 있
 
 ![git-ignore.png]({{ page.imgp }}git-ignore.png)
 
-test 폴더와 그 하위 파일은 ``.gitignore`로 제외처러 되어 흐릿하게 표시되었다.
+test 폴더와 그 하위 파일은 `.gitignore`로 제외처러 되어 흐릿하게 표시되었다.
 
 ## Cloning a repository
 
