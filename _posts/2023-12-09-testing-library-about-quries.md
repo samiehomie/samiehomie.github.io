@@ -121,14 +121,12 @@ render(
 const exampleInput = screen.getByLabelText('Example')
 ```
 
-<aside>
-📌 **Note**
-
-`screen`을 사용하려면 글로벌 DOM 환경이 필요하다. `jest`를 사용하는 경우 `testEnvironment` 를 `jsdom`으로 설정하면 글로벌 DOM 환경을 사용할 수 있다.
-
-`script` 태그로 테스트를 로드하는 경우엔 테스트가 반드시 `body` 다음에 와야 한다. 
-
-</aside>
+> 📌 **Note**
+> 
+> `screen`을 사용하려면 글로벌 DOM 환경이 필요하다. `jest`를 사용하는 경우 `testEnvironment` 를 `jsdom`으로 설정하면 글로벌 DOM 환경을 사용할 수 있다.
+> 
+> `script` 태그로 테스트를 로드하는 경우엔 테스트가 반드시 `body` 다음에 와야 한다. 
+> 
 
 ## `TextMatch`
 
@@ -195,12 +193,10 @@ DOM Testing Library는 DOM의 텍스트와 일치하는 로직을 실행하기 �
 
 해당 정규화를 방지하거나 대체 정규화(예: 유니코드 제어 문자 제거)를 제공하려면 option 객체에서 `normalizer` 함수를 제공하면 된다. 이 함수는 문자열을 받아 해당 문자열의 정규화 버전을 반환해야 한다.
 
-<aside>
-📌 Note
-
-`normalizer`의 값을 지정하면 내장 정규화가 대체되지만 `getDefaultNormalizer`를 호출하여 내장 기본 `normalizer`를 얻을 수 있다. 이를 활용해 기본 내장 normalizer를 조정하거나 직접 작성하는 커스텀 normalizer 내부에서 호출하여 기본 기능을 커스텀 normalizer에서 활용할 수 있다.
-
-</aside>
+> 📌 Note
+> 
+> `normalizer`의 값을 지정하면 내장 정규화가 대체되지만 `getDefaultNormalizer`를 호출하여 내장 기본 `normalizer`를 얻을 수 있다. 이를 활용해 기본 내장 normalizer를 조정하거나 직접 작성하는 커스텀 normalizer 내부에서 호출하여 기본 기능을 커스텀 normalizer에서 활용할 수 있다.
+> 
 
 `getDefaultNormalizer`는 동작을 선택할 수 있는 옵션 객체를 인수로 받는다.
 

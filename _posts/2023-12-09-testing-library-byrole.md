@@ -45,14 +45,12 @@ getByRole(
 
 암묵적 ARIA 시맨틱스와 매칭되는 `role` 또는 `aria-*` 속성을 설정하는 것은 불필요하며 권장하지 않는다. 이러한 속성은 브라우저에서 이미 설정되어 있다. 더불어 요소가 가지는 의미와 충돌하는  `role` 및 `aria-*` 속성을 부여해서도 안된다. 예를 들어, button 요소는 heading 역할과 충돌하는 기본 특성을 가지고 있기 때문에 heading의 role 속성을 가질 수 없다.
 
-<aside>
-📌 ARIA란?
 
-ARIA(Accessible Rich Internet Applications)는 웹 콘텐츠와 웹 애플리케이션(특히 JavaScript를 사용하여 개발된 것)이 장애를 가진 사람들에게 더 접근 가능하도록 만드는 방법을 정의하는 W3C(Web Content Accessibility Guidelines) 사양이다.
-
-ARIA는 웹 페이지의 요소가 어떤 역할을 하는지, 그 상태는 무엇인지, 그리고 그것들이 서로 어떤 관계를 가지고 있는지를 보조 기술에게 알려주는 역할을 한다. 이는 스크린 리더와 같은 보조 기술을 사용하는 사용자가 웹 콘텐츠를 더 잘 이해하고 사용할 수 있게 돕는다.
-
-</aside>
+> 📌 ARIA란?
+> 
+> ARIA(Accessible Rich Internet Applications)는 웹 콘텐츠와 웹 애플리케이션(특히 JavaScript를 사용하여 개발된 것)이 장애를 가진 사람들에게 더 접근 가능하도록 만드는 방법을 정의하는 W3C(Web Content Accessibility Guidelines) 사양이다.
+> 
+> ARIA는 웹 페이지의 요소가 어떤 역할을 하는지, 그 상태는 무엇인지, 그리고 그것들이 서로 어떤 관계를 가지고 있는지를 보조 기술에게 알려주는 역할을 한다. 이는 스크린 리더와 같은 보조 기술을 사용하는 사용자가 웹 콘텐츠를 더 잘 이해하고 사용할 수 있게 돕는다.
 
 > role은 ARIA 역할 계층 구조를 상속과 무관하게 오로지 문자열 동등성에 의해 매치된다. 따라서 `checkbox` 와 같은 슈퍼클래스 role을 쿼리 한다고 `switch`와 같은 서브클래스 role을 가진 요소가 포함되지 않는다.
 > 
@@ -115,20 +113,18 @@ ARIA는 웹 페이지의 요소가 어떤 역할을 하는지, 그 상태는 무
 
 `checked` 옵션에 `true` 또는 `false` 를 설정해서 요소의 checked 상태를 통해 반환된 요소를 필터할 수 있다.
 
-<aside>
-📌 Note
-
-Checkbox는 checked도 unchecked 아닌 이 두가지 사이의 상태인 불확정(indeterminate) 상태를 갖는다.
-
-이 상태는 주로 트리 구조에서 부모 노드가 자식 노드의 선택 상태를 나타낼 때 사용된다. 예를 들어, 부모 노드에 연결된 모든 자식 노드가 체크되지 않았거나 일부만 체크된 경우, 부모 노드의 checkbox는 'indeterminate' 상태를 나타낼 수 있다.
-
-HTML에서는 'indeterminate' 상태를 직접 설정할 수 없으며, 이를 설정하려면 JavaScript를 사용해야 한다. 예를 들어, 다음과 같이 설정할 수 있다:
-
-```jsx
-document.getElementById("myCheckbox").indeterminate = true;
-```
-
-</aside>
+> 📌 Note
+> 
+> Checkbox는 checked도 unchecked 아닌 이 두가지 사이의 상태인 불확정(indeterminate) 상태를 갖는다.
+> 
+> 이 상태는 주로 트리 구조에서 부모 노드가 자식 노드의 선택 상태를 나타낼 때 사용된다. 예를 들어, 부모 노드에 연결된 모든 자식 노드가 체크되지 않았거나 일부만 체크된 경우, 부모 노드의 checkbox는 'indeterminate' 상태를 나타낼 수 있다.
+> 
+> HTML에서는 'indeterminate' 상태를 직접 설정할 수 없으며, 이를 설정하려면 JavaScript를 사용해야 한다. 예를 들어, 다음과 같이 설정할 수 있다.
+>
+> ```javascript
+> document.getElementById("myCheckbox").indeterminate = true;
+> ```
+>
 
 ### **`current`**
 
