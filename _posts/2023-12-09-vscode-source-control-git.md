@@ -17,7 +17,7 @@ VS Code는 로컬부터 Github Codespaces같은 클라우드 기반 원격까지
 
 ### Clone a repository locally
 
-![panel.png]({{ page.imgp }}git-panel.png)
+![panel.png]({{ page.imgp }}panel.png)
 
 Github에서 저장소를 `clone` 하기 위해서 **Git: Clone** 명령을 실행하거나 Source Code 창에서 **Clone Repository** 버튼을 클릭해야 한다. GitHub를 clone 하면 VS Code는 GitHub로 인증하라는 메시지를 표시한다. 이를 인증하면 사용가능한 모든 저장소를 검색할 수 있고 private 저장소를 clone할 수 있다. 다른 Git 제공자의 경우, 저장소 URL을 입력하고 Clone을 선택한 후 폴더를 선택한다. VS Code는 로컬에 저장소 복사가 완료되면 해당 폴더를 오픈한다.
 
