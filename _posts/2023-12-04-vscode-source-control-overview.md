@@ -3,7 +3,7 @@ title: Overview
 author: sam
 date: 2022-12-04 11:32:00 -0500
 categories: [VS Code, SOURCE CONTROL]
-tags: [VS Code, Source Control]
+tags: [VS Code, Source Control, Git]
 imgp: /assets/img/basic/
 ---
 
