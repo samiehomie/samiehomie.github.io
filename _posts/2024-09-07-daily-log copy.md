@@ -1,7 +1,7 @@
 ---
 title: "너무 덥다"
 author: sam
-date: 2024-07-13 13:45:00 -0500
+date: 2024-07-13 13:45:00
 categories: [Daily Log, Gratitude Journal]
 tags: [Daily Log]
 imgp: /assets/img/git/
