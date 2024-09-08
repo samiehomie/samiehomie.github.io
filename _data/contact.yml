@@ -5,6 +5,7 @@
 
 - type: linkedin
   icon: 'fab fa-linkedin' 
+  url: https://www.linkedin.com/in/sam-jeong-1bb4392aa
 
 - type: email
   icon: "fas fa-envelope"
