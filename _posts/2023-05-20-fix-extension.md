@@ -2,7 +2,7 @@
 title: "VS Code 확장앱 오류 해결"
 author: sam
 date: 2023-05-20 18:32:00 -0500
-categories: [개발 사전, 오류]
+categories: [Handbook, Tech Terms]
 tags: [VS Code, prettier]
 ---
 
